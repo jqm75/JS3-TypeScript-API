@@ -1,1 +1,1 @@
-# S5-JS3-Typescript-api
+# S5-JS3-TypeScript-API
