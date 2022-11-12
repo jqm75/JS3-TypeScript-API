@@ -12,6 +12,33 @@ interface Api {
     url: string,
     options: Options
 } */
+
+
+
+const weather = (async () :Promise<void> => {
+    
+    const locationURL = 'https://ipapi.co/json/'
+    const location = await (await fetch(locationURL)).json()
+    console.log("🚀 ~ file: app.ts ~ line 22 ~ weather ~ location", location)
+
+    const API_token = 'd0047952dfbeb9ec30622425fe11ed84'
+    // let lat = navigator.geolocation.latitude;
+    let lon
+    let lat
+    function showPosition(position) {
+        lat = position.coords.latitude
+        lon = position.coords.longitude
+    }
+
+    navigator.geolocation.getCurrentPosition(showPosition)
+    console.log("🚀 ~ file: app.ts ~ line 20 ~ weather ~ lon", lon)
+
+    // const API_URL: string = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_token}`
+    
+
+})()
+
+// -----------------------------------------------------------------
 let joke: string
 
 // Creamos función asincrona para esperar la promesa.

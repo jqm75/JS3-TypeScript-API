@@ -1,12 +1,3 @@
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
 /* interface Headers {
     urlHeader?: string,
     token?: string
@@ -21,6 +12,32 @@ interface Api {
     url: string,
     options: Options
 } */
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+const weather = (() => __awaiter(this, void 0, void 0, function* () {
+    const locationURL = 'https://ipapi.co/json/';
+    const location = yield (yield fetch(locationURL)).json();
+    console.log("🚀 ~ file: app.ts ~ line 22 ~ weather ~ location", location);
+    const API_token = 'd0047952dfbeb9ec30622425fe11ed84';
+    // let lat = navigator.geolocation.latitude;
+    let lon;
+    let lat;
+    function showPosition(position) {
+        lat = position.coords.latitude;
+        lon = position.coords.longitude;
+    }
+    navigator.geolocation.getCurrentPosition(showPosition);
+    console.log("🚀 ~ file: app.ts ~ line 20 ~ weather ~ lon", lon);
+    // const API_URL: string = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_token}`
+}))();
+// -----------------------------------------------------------------
 let joke;
 // Creamos función asincrona para esperar la promesa.
 function callRandomJoke() {
