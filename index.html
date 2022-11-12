@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./sass/style.css">
     <title>JOKES</title>
 </head>
 <body>
-    <div id="app">
+    <d id="app">
         <h1>RANDOM JOKES</h1><br>
 
         <div id="joke">
             
     
         </div>
-        <input type="button" value="SHOW NEXT JOKE" onclick="callRandomJoke()">
+        <input class="btn btn-danger" type="button" value="SHOW NEXT JOKE" onclick="callRandomJoke()">
+        <button class="btn btnScore btn-primary" data-score="1" id="score1">MAL</button>
+        <button class="btn btnScore btn-primary" data-score="2" id="score2">REGU</button>
+        <button class="btn btnScore btn-primary" data-score="3" id="score3">BIEN</button>
+ 
     </div>
 
     <script src="./build/app.js"></script>
