@@ -10934,4 +10934,10 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+/* .row{
+    display: grid;
+    grid-template-columns: repeat(1fr, 3);
+    grid-template-rows: 1fr;
+    width: 100%;
+} *//*# sourceMappingURL=style.css.map */

@@ -1,17 +1,4 @@
-/* interface Headers {
-    urlHeader?: string,
-    token?: string
-}
-
-interface Options {
-    method?: string,
-    headers: Headers
-}
-
-interface Api {
-    url: string,
-    options: Options
-} */
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -22,41 +9,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 // ---------------------- WEATHER ---------------------- 
-const weather = (() => __awaiter(this, void 0, void 0, function* () {
+const printWeather = ({ weather, main }) => {
+    const imgWeather = document.getElementById('imgWeather');
+    const txtWeather = document.getElementById('txtWeather');
+    const icon = weather[0].icon;
+    const temp = parseInt(main.temp);
+    imgWeather.src = "./img/" + icon + ".png";
+    txtWeather.innerText = temp + ' ºC';
+};
+const weatherUser = (() => __awaiter(void 0, void 0, void 0, function* () {
     const locationURL = 'https://ipapi.co/json/';
-    fetch(locationURL)
-        .then((response) => response.json())
-        .then((location) => showPosition(location));
-    // const location = await (await fetch(locationURL)).json()
-    console.log("🚀 ~ file: app.ts ~ line 22 ~ weather ~ location", location);
-    const API_token = 'd0047952dfbeb9ec30622425fe11ed84';
-    // let lat = navigator.geolocation.latitude;
-    let lon;
-    let lat;
-    function showPosition(position) {
-        lat = position.latitude;
-        lon = position.longitude;
-        const API_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_token}&units=metric`;
-        tiempo(API_URL);
-    }
+    const { latitude, longitude } = yield (yield fetch(locationURL)).json();
+    const weatherToken = 'd0047952dfbeb9ec30622425fe11ed84';
+    const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${weatherToken}&units=metric`;
+    const weatherDataUser = yield (yield fetch(weatherURL)).json();
+    printWeather(weatherDataUser);
 }))();
-function tiempo(String) {
-    fetch(String)
-        .then((response) => response.json())
-        .then((data) => infoWeather(data));
-    function infoWeather(data) {
-        let icon = data.weather[0].icon;
-        let temp = data.main.temp.toFixed(0);
-        let imgWeather = document.getElementById('imgWeather');
-        if (imgWeather) {
-            imgWeather.src = "./img/" + icon + ".png";
-        }
-        let temp2 = document.getElementById('txtWeather');
-        if (temp2) {
-            temp2.innerText = temp.toString() + ' ºC';
-        }
-    }
-}
 // ---------------------- JOKES ---------------------- 
 let joke;
 // Creamos función asincrona para esperar la promesa.

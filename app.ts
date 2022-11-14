@@ -1,4 +1,5 @@
-/* interface Headers {
+interface Headers {
+    accept?: string,
     urlHeader?: string,
     token?: string
 }
@@ -10,61 +11,37 @@ interface Options {
 
 interface Api {
     url: string,
-    options: Options
-} */
+    options?: Options
+}
 
 // ---------------------- WEATHER ---------------------- 
 
-const weather = (async (): Promise<void> => {
+const printWeather = ( { weather, main }: any ): void => {
+    const imgWeather = <HTMLImageElement>document.getElementById('imgWeather');
+    const txtWeather = <HTMLElement>document.getElementById('txtWeather');
 
-    const locationURL = 'https://ipapi.co/json/'
-    fetch(locationURL)
-        .then((response) => response.json())
-        .then((location) => showPosition(location))
-    // const location = await (await fetch(locationURL)).json()
-    console.log("🚀 ~ file: app.ts ~ line 22 ~ weather ~ location", location)
+    const icon: string = weather[0].icon;
+    const temp: number = parseInt(main.temp);
 
-    const API_token = 'd0047952dfbeb9ec30622425fe11ed84'
-    // let lat = navigator.geolocation.latitude;
-    let lon: number;
-    let lat: number;
+    imgWeather.src = "./img/" + icon + ".png";
+    txtWeather.innerText = temp + ' ºC';
+}
+
+
+const weatherUser = (async (): Promise<void> => {
     
-    function showPosition(position) {
-        
-        lat = position.latitude
-        lon = position.longitude
-        
-        const API_URL: string = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_token}&units=metric`;
-        
-        tiempo(API_URL);
-    }
+    const locationURL = 'https://ipapi.co/json/'
+    
+    const { latitude, longitude } = await (await fetch(locationURL)).json()
+    
+    const weatherToken = 'd0047952dfbeb9ec30622425fe11ed84'
+    const weatherURL: string = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${weatherToken}&units=metric`;
+
+    const weatherDataUser = await (await fetch(weatherURL)).json()
+
+    printWeather(weatherDataUser);
 
 })()
-
-function tiempo(String): void {
-
-    fetch(String)
-        .then((response) => response.json())
-        .then((data) => infoWeather(data));
-
-
-    function infoWeather(data): void {
-
-        let icon: string = data.weather[0].icon;
-        let temp: number = data.main.temp.toFixed(0);
-
-        let imgWeather = <HTMLImageElement>document.getElementById('imgWeather');
-        if (imgWeather) {
-            imgWeather.src = "./img/" + icon + ".png";
-        }
-
-        let temp2: HTMLElement = document.getElementById('txtWeather');
-        if (temp2) {
-            temp2.innerText = temp.toString() + ' ºC';
-        }
-
-    }
-}
 
 // ---------------------- JOKES ---------------------- 
 
@@ -85,7 +62,7 @@ async function callRandomJoke(): Promise<void> {
     const jokeResponse = await (await fetch(API_URL, options)).json()
     console.log("🚀 ~ file: app.ts ~ line 87 ~ callRandomJoke ~ jokeResponse", jokeResponse)
 
-    const HTMLResponse: HTMLElement = document.querySelector('#joke')
+    const HTMLResponse = <HTMLElement>document.querySelector('#joke')
 
     // Imprimimos respuesta especificando el atributo del joke (+info en console.log línea 15)
     HTMLResponse.innerHTML = jokeResponse.joke;
