@@ -30,6 +30,15 @@ let joke;
 // Creamos función asincrona para esperar la promesa.
 function callRandomJoke() {
     return __awaiter(this, void 0, void 0, function* () {
+        /*
+        showRandomJoke = Math.floor(Math.random());
+        if (showRandomJoke === 1) {
+    
+            //algo como la línea 64?
+    
+    
+        }
+     */
         // Almacenamos la URL de la API.
         const API_URL = 'https://icanhazdadjoke.com/';
         // Añadimos el HEADER que especifica la API en su documentación.

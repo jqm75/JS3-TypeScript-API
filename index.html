@@ -9,22 +9,24 @@
 </head>
 <body>
 
-    <header  id="weather" class="row">
+    <header  id="weather" class="d-flex row justify-content-start h-25 w-25">
         <div class="col-6"><img id="imgWeather" src="" alt=""></div>
-        <h2 class="col-3 d-flex align-items-baseline" id="txtWeather"></h2>
+        <h4 class="col-3" id="txtWeather"></h4>
     </header>
     
-    <div id="main-section" class="container row">
-        <section id="main-content" class="">
-            <h1>RANDOM JOKES</h1>
+    <div id="main-section" class="container row justify-content-center">
+        <section id="main-content" class="col-12 w-100">
+            <h1>RANDOM JOKES</h1><br>
             
-            <div id="joke"></div>
+            <div id="joke"></div><br>
             
-            <input class="btn btn-danger" type="button" value="SHOW NEXT JOKE" onclick="callRandomJoke()">
+            
 
             <button class="btn btnScore btn-primary" data-score="1" id="score1">MAL</button>
             <button class="btn btnScore btn-primary" data-score="2" id="score2">REGU</button>
-            <button class="btn btnScore btn-primary" data-score="3" id="score3">BIEN</button>
+            <button class="btn btnScore btn-primary" data-score="3" id="score3">BIEN</button><br><br>
+
+            <input class="btn btn-danger" type="button" value="SHOW NEXT JOKE" onclick="callRandomJoke()">
         </section>
     </div>
 

@@ -40,7 +40,6 @@ const weatherUser = (async (): Promise<void> => {
     const weatherDataUser = await (await fetch(weatherURL)).json()
 
     printWeather(weatherDataUser);
-
 })()
 
 // ---------------------- JOKES ---------------------- 
@@ -49,6 +48,18 @@ let joke: string
 
 // Creamos función asincrona para esperar la promesa.
 async function callRandomJoke(): Promise<void> {
+
+    /* 
+    showRandomJoke = Math.floor(Math.random());
+    if (showRandomJoke === 1) {
+
+        //algo como la línea 64?
+
+
+    }
+ */
+
+
     // Almacenamos la URL de la API.
     const API_URL: string = 'https://icanhazdadjoke.com/';
 
@@ -74,7 +85,6 @@ interface IJoke {
     joke: string,
     score: number,
     date: string
-
 }
 
 class Joke implements IJoke {
@@ -98,5 +108,4 @@ btnScore.forEach(button => {
         reportJokes.push(new Joke(joke, Number(data)))
         console.log("🚀 ~ file: app.ts ~ line 123 ~ button.addEventListener ~ reportJokes", reportJokes)
     });
-
 });
