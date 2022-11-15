@@ -13,6 +13,9 @@
 ``npx tsc``
 
 
+
+
+
 math.random
 
 round

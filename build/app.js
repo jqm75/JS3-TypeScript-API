@@ -1,4 +1,19 @@
 "use strict";
+/* interface Headers {
+    accept?: string,
+    urlHeader?: string,
+    token?: string
+}
+
+interface Options {
+    method?: string,
+    headers: Headers
+}
+
+interface Api {
+    url: string,
+    options?: Options
+} */
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -17,43 +32,48 @@ const printWeather = ({ weather, main }) => {
     imgWeather.src = "./img/" + icon + ".png";
     txtWeather.innerText = temp + ' ºC';
 };
-const weatherUser = (() => __awaiter(void 0, void 0, void 0, function* () {
-    const locationURL = 'https://ipapi.co/json/';
-    const { latitude, longitude } = yield (yield fetch(locationURL)).json();
-    const weatherToken = 'd0047952dfbeb9ec30622425fe11ed84';
+window.onload = () => navigator.geolocation.getCurrentPosition(weatherUser);
+const weatherUser = (position) => __awaiter(void 0, void 0, void 0, function* () {
+    const { coords } = position;
+    const { latitude, longitude } = coords;
+    // const locationURL = 'https://ipapi.co/json/'
+    // const { latitude, longitude } = await (await fetch(locationURL)).json()
+    const weatherToken = '38c997fb804db3f0306de47499e851a1';
     const weatherURL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${weatherToken}&units=metric`;
     const weatherDataUser = yield (yield fetch(weatherURL)).json();
     printWeather(weatherDataUser);
-}))();
+});
 // ---------------------- JOKES ---------------------- 
 let joke;
 // Creamos función asincrona para esperar la promesa.
 function callRandomJoke() {
     return __awaiter(this, void 0, void 0, function* () {
-        /*
-        showRandomJoke = Math.floor(Math.random());
-        if (showRandomJoke === 1) {
-    
-            //algo como la línea 64?
-    
-    
-        }
-     */
+        const HTMLResponse = document.querySelector('#joke');
         // Almacenamos la URL de la API.
-        const API_URL = 'https://icanhazdadjoke.com/';
+        const ApiJoke1 = 'https://icanhazdadjoke.com/';
         // Añadimos el HEADER que especifica la API en su documentación.
-        const options = {
+        const optionsJoke1 = {
             headers: {
                 'Accept': 'application/json'
             }
         };
+        // Almacenamos la URL de la nueva API.
+        const ApiJoke2 = 'https://api.chucknorris.io/jokes/random';
+        // Añadimos el HEADER que especifica la API en su documentación.
+        const optionsJoke2 = {
+            headers: {
+                'Accept': 'application/json'
+            }
+        };
+        const showRandomJoke = Math.round(Math.random());
+        console.log("🚀 ~ file: app.ts ~ line 98 ~ callRandomJoke ~ showRandomJoke", showRandomJoke);
+        if (showRandomJoke === 1) {
+            joke = (yield (yield fetch(ApiJoke1, optionsJoke1)).json()).joke;
+            return HTMLResponse.innerHTML = joke;
+        }
         // Hacemos la petición/fetch a la API y lo convertimos a JSON.
-        const jokeResponse = yield (yield fetch(API_URL, options)).json();
-        console.log("🚀 ~ file: app.ts ~ line 87 ~ callRandomJoke ~ jokeResponse", jokeResponse);
-        const HTMLResponse = document.querySelector('#joke');
-        // Imprimimos respuesta especificando el atributo del joke (+info en console.log línea 15)
-        HTMLResponse.innerHTML = jokeResponse.joke;
-        joke = jokeResponse.joke;
+        joke = (yield (yield fetch(ApiJoke2, optionsJoke2)).json()).value;
+        return HTMLResponse.innerHTML = joke;
     });
 }
 class Joke {
@@ -68,8 +88,7 @@ const btnScore = document.querySelectorAll('.btnScore');
 btnScore.forEach(button => {
     button.addEventListener('click', () => {
         const data = button.getAttribute('data-score');
-        console.log("🚀 ~ file: app.ts ~ line 120 ~ btnScore.addEventListener ~ data", data);
         reportJokes.push(new Joke(joke, Number(data)));
-        console.log("🚀 ~ file: app.ts ~ line 123 ~ button.addEventListener ~ reportJokes", reportJokes);
+        console.log("🚀 ~ file: app.ts ~ line 139 ~ button.addEventListener ~ reportJokes", reportJokes);
     });
 });
