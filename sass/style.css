@@ -10935,9 +10935,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-/* .row{
-    display: grid;
-    grid-template-columns: repeat(1fr, 3);
-    grid-template-rows: 1fr;
-    width: 100%;
-} *//*# sourceMappingURL=style.css.map */
+#imgWeather {
+  width: 25%;
+}/*# sourceMappingURL=style.css.map */

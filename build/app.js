@@ -48,6 +48,7 @@ let joke;
 // Creamos función asincrona para esperar la promesa.
 function callRandomJoke() {
     return __awaiter(this, void 0, void 0, function* () {
+        btnScore.forEach(btn => btn.removeAttribute('disabled'));
         const HTMLResponse = document.querySelector('#joke');
         // Almacenamos la URL de la API.
         const ApiJoke1 = 'https://icanhazdadjoke.com/';
@@ -87,6 +88,7 @@ const reportJokes = [];
 const btnScore = document.querySelectorAll('.btnScore');
 btnScore.forEach(button => {
     button.addEventListener('click', () => {
+        btnScore.forEach(btn => btn.setAttribute('disabled', ''));
         const data = button.getAttribute('data-score');
         reportJokes.push(new Joke(joke, Number(data)));
         console.log("🚀 ~ file: app.ts ~ line 139 ~ button.addEventListener ~ reportJokes", reportJokes);
