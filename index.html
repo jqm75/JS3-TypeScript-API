@@ -9,29 +9,31 @@
 </head>
 <body>
 
-    <header  id="weather" class="d-flex row justify-content-start h-25 w-25">
-        <div class="col-6"><img id="imgWeather" src="" alt=""></div>
-        <h4 class="col-3" id="txtWeather"></h4>
+    <header  id="weather" class="d-flex container-fluid">
+        <span class="col-3 img-fluid pl-2"><img id="imgWeather" src="" alt="">
+            <h4 class="col-9" id="txtWeather"></h4>
+        </span>
+        
     </header>
     
-    <div id="main-section" class="container row justify-content-center">
-        <section id="main-content" class="col-12 w-100">
+    <main>
+        <section id="main-content" class="col-12 w-100 p-5">
             <h1>RANDOM JOKES</h1><br>
             
             <div id="joke"></div><br>
             
-            <button class="btn btnScore btn-primary" data-score="1" id="score1">PUTO MAL</button>
+            <button class="btn btnScore btn-primary" data-score="1" id="score1">MU MALO</button>
             <button class="btn btnScore btn-primary" data-score="2" id="score2">REGU</button>
             <button class="btn btnScore btn-primary" data-score="3" id="score3">BIEN</button><br><br>
-
-            <input class="btn btn-dark" type="button" value="SHOW NEXT JOKE" onclick="callRandomJoke()">
+        
+            <input class="btn btn-danger" type="button" value="SHOW NEXT JOKE" onclick="callRandomJoke()">
         </section>
-    </div>
+    </main>
 
-    
-<!--     <footer id="footer">
-        <p>©2022</p>
-    </footer> -->
+        
+    <footer id="footer" class=" container-fluid align- p-5">
+        <p>©2022 de puto culo.</p>
+    </footer>
 
     <script src="./build/app.js"></script>
 </body>
