@@ -1,6 +1,11 @@
-@import "../node_modules/bootstrap/scss/bootstrap"; 
+@import "../node_modules/bootstrap/scss/bootstrap";
+
 
 #imgWeather {
     width: 25%;
-
 }
+
+#txtWeather {
+    font-size: 24px
+}
+

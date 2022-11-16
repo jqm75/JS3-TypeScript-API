@@ -6,34 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./sass/style.css">
     <title>JOKES</title>
-</head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
 <body>
 
-    <header  id="weather" class="d-flex container-fluid">
-        <span class="col-3 img-fluid pl-2"><img id="imgWeather" src="" alt="">
-            <h4 class="col-9" id="txtWeather"></h4>
-        </span>
+    <header>
+        <div id="weather">
+            <img id="imgWeather" src="" alt=""></img>
+            <span id="txtWeather"></span>
+        </div>
         
     </header>
-    
-    <main>
-        <section id="main-content" class="col-12 w-100 p-5">
-            <h1>RANDOM JOKES</h1><br>
-            
-            <div id="joke"></div><br>
-            
-            <button class="btn btnScore btn-primary" data-score="1" id="score1">MU MALO</button>
-            <button class="btn btnScore btn-primary" data-score="2" id="score2">REGU</button>
-            <button class="btn btnScore btn-primary" data-score="3" id="score3">BIEN</button><br><br>
         
-            <input class="btn btn-danger" type="button" value="SHOW NEXT JOKE" onclick="callRandomJoke()">
-        </section>
-    </main>
+    <div id="jokeCard">
+        <h1>Ready to laugh your ass off? </h1><br>
+        
+        <p id="joke"></p>
+        
+        <button class="btn btnScore btn-primary" data-score="1" id="score1">BAD</button>
+        <button class="btn btnScore btn-primary" data-score="2" id="score2">SO, SO</button>
+        <button class="btn btnScore btn-primary" data-score="3" id="score3">EXCELLENT</button><br><br>
+
+
+    </div>
+    
+        <input class="btn btn-danger" type="button" value="Show me a joke" onclick="callRandomJoke()">
+
+
+<!--     <div id="backImg1" class="backImg blob1"></div>
+    <div id="backImg2" class="backImg blob2"></div>
+    <div id="backImg3" class="backImg blob3"></div> -->
 
         
     <footer id="footer" class=" container-fluid align- p-5">
-        <p>©2022 de puto culo.</p>
+        <p>©2022 Up to my eyeballs with work! 🤣</p>
     </footer>
+
 
     <script src="./build/app.js"></script>
 </body>
