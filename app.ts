@@ -35,6 +35,12 @@ interface AWeather {
     icon: string
 }
 
+// const backImg1: HTMLElement = document.querySelector("#backImg1")!;
+// const backImg2: HTMLElement = document.querySelector("#backImg2")!;
+// const backImg3: HTMLElement = document.querySelector("#backImg3")!;
+
+// changeBackground();
+
 // ---------------------- WEATHER ---------------------- 
 
 const printWeather = ( { weather, main }: Weather ): void => {
@@ -72,7 +78,7 @@ let joke: string
 
 // Creamos función asincrona para esperar la promesa.
 async function callRandomJoke(): Promise<string> {
-    
+    changeBackground()
     btnScore.forEach(btn => btn.removeAttribute('disabled'))
     
 
@@ -98,8 +104,11 @@ async function callRandomJoke(): Promise<string> {
     };
 
     const showRandomJoke = Math.round(Math.random());
-    console.log("🚀 ~ file: app.ts ~ line 98 ~ callRandomJoke ~ showRandomJoke", showRandomJoke)
 
+    console.log("🚀 ~ file: app.ts ~ line 102 ~ callRandomJoke ~ showRandomJoke", showRandomJoke)
+
+    const className : string = `backImg blob${showRandomJoke}` // <- para cambiar el fondo
+    
     if (showRandomJoke === 1) {
         
         joke = (await (await fetch(ApiJoke1, optionsJoke1)).json()).joke
@@ -146,3 +155,20 @@ btnScore.forEach(button => {
         
     });
 });
+
+// ---------------------- CHANGE IMG BG ---------------------- 
+
+/* 
+function changeBackground(): void {
+    backImg1.className = showRandomJoke();
+    backImg2.className = showRandomJoke();
+    backImg3.className = showRandomJoke();
+}; */
+
+const backImg1 = <HTMLElement>document.getElementById('backImg1')
+
+function changeBackground(): void {
+    const randomNumber = Math.round(Math.random() * 10)
+    const srcRoute = `../img/blobs/blob_${randomNumber}.svg`
+    backImg1.style.backgroundImage = `url(${srcRoute})`
+};

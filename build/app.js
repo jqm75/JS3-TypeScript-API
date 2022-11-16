@@ -23,6 +23,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+// const backImg1: HTMLElement = document.querySelector("#backImg1")!;
+// const backImg2: HTMLElement = document.querySelector("#backImg2")!;
+// const backImg3: HTMLElement = document.querySelector("#backImg3")!;
+// changeBackground();
 // ---------------------- WEATHER ---------------------- 
 const printWeather = ({ weather, main }) => {
     const imgWeather = document.getElementById('imgWeather');
@@ -48,6 +52,7 @@ let joke;
 // Creamos función asincrona para esperar la promesa.
 function callRandomJoke() {
     return __awaiter(this, void 0, void 0, function* () {
+        changeBackground();
         btnScore.forEach(btn => btn.removeAttribute('disabled'));
         const HTMLResponse = document.querySelector('#joke');
         // Almacenamos la URL de la API.
@@ -67,7 +72,8 @@ function callRandomJoke() {
             }
         };
         const showRandomJoke = Math.round(Math.random());
-        console.log("🚀 ~ file: app.ts ~ line 98 ~ callRandomJoke ~ showRandomJoke", showRandomJoke);
+        console.log("🚀 ~ file: app.ts ~ line 102 ~ callRandomJoke ~ showRandomJoke", showRandomJoke);
+        const className = `backImg blob${showRandomJoke}`; // <- para cambiar el fondo
         if (showRandomJoke === 1) {
             joke = (yield (yield fetch(ApiJoke1, optionsJoke1)).json()).joke;
             return HTMLResponse.innerHTML = joke;
@@ -94,3 +100,17 @@ btnScore.forEach(button => {
         console.log("🚀 ~ file: app.ts ~ line 139 ~ button.addEventListener ~ reportJokes", reportJokes);
     });
 });
+// ---------------------- CHANGE IMG BG ---------------------- 
+/*
+function changeBackground(): void {
+    backImg1.className = showRandomJoke();
+    backImg2.className = showRandomJoke();
+    backImg3.className = showRandomJoke();
+}; */
+const backImg1 = document.getElementById('backImg1');
+function changeBackground() {
+    const randomNumber = Math.round(Math.random() * 10);
+    const srcRoute = `../img/blobs/blob_${randomNumber}.svg`;
+    backImg1.style.backgroundImage = `url(${srcRoute})`;
+}
+;
