@@ -10935,19 +10935,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-#imgWeather {
-  width: 25%;
-}
-
-#txtWeather {
-  font-size: 24px;
-}
-
-body {
-  font-family: "Open Sans", sans-serif;
-  height: 100vh;
-}
-
 .backImg {
   position: absolute;
   z-index: -2;
@@ -10978,61 +10965,166 @@ body {
   height: 15%;
 }
 
-/* 
-li {
-    list-style: none!important;
-    width: 40px;
-    height: auto;
-    background-color: red;
-    margin: 5px;
-    a {
-        padding: 50%;
-    }
-} */
-/* #score1 {
-    background: url(../img/faces/face1.svg);
-
-} */
-.blob_00 {
-  background-image: url(../img/blobs/blob_00.svg);
+.blob_0 {
+  background-image: url(../img/blobs/blob_0.svg);
 }
 
-.blob_01 {
-  background-image: url(../img/blobs/blob_01.svg);
+.blob_1 {
+  background-image: url(../img/blobs/blob_1.svg);
 }
 
-.blob_02 {
-  background-image: url(../img/blobs/blob_02.svg);
+.blob_2 {
+  background-image: url(../img/blobs/blob_2.svg);
 }
 
-.blob_03 {
-  background-image: url(../img/blobs/blob_03.svg);
+.blob_3 {
+  background-image: url(../img/blobs/blob_3.svg);
 }
 
-.blob_04 {
-  background-image: url(../img/blobs/blob_04.svg);
+.blob_4 {
+  background-image: url(../img/blobs/blob_4.svg);
 }
 
-.blo_05 {
-  background-image: url(../img/blobs/blob_05.svg);
+.blo_5 {
+  background-image: url(../img/blobs/blob_5.svg);
 }
 
-.blob_06 {
-  background-image: url(../img/blobs/blob_06.svg);
+.blob_6 {
+  background-image: url(../img/blobs/blob_6.svg);
 }
 
-.blob_07 {
-  background-image: url(../img/blobs/blob0_07.svg);
+.blob_7 {
+  background-image: url(../img/blobs/blob0_7.svg);
 }
 
-.blob_08 {
-  background-image: url(../img/blobs/blob_08.svg);
+.blob_8 {
+  background-image: url(../img/blobs/blob_8.svg);
 }
 
-.blob_09 {
-  background-image: url(../img/blobs/blob_09.svg);
+.blob_9 {
+  background-image: url(../img/blobs/blob_9.svg);
 }
 
 .blob_10 {
   background-image: url(../img/blobs/blob_10.svg);
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  overflow-y: hidden;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+#weather {
+  position: absolute;
+  z-index: -1;
+  top: 10px;
+  left: 10px;
+  padding-left: 20px;
+}
+#weather #imgWeather {
+  width: 40px;
+  position: relative;
+}
+#weather #txtWeather {
+  padding-left: 10px;
+  margin-left: 10px;
+  border-left: 2px solid black;
+}
+
+#jokeCard {
+  margin: 0 auto;
+  width: 50%;
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+#jokeCard h1, #jokeCard .h1 {
+  font-size: medium;
+  padding: 25px;
+  font-weight: 600;
+}
+#jokeCard #joke {
+  padding: 10px;
+  min-height: 50px;
+  font-size: small;
+  margin: 0px 80px 0 80px;
+}
+#jokeCard #rating {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+#jokeCard #rating #ratingBtns {
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+  /* font-size: small; */
+}
+#jokeCard #rating #ratingBtns button {
+  background-color: rgba(0, 0, 0, 0);
+  margin-top: 30px;
+  border: 0;
+  font-size: 30px;
+  text-shadow: 2px 2px rgb(251, 203, 38);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50px;
+}
+#jokeCard #rating #ratingBtns #score1 {
+  background-image: url("../img/faces/face1.svg");
+}
+#jokeCard #rating #ratingBtns #score2 {
+  background-image: url("../img/faces/face2.svg");
+}
+#jokeCard #rating #ratingBtns #score3 {
+  background-image: url("../img/faces/face3.svg");
+}
+#jokeCard #jokeBtn {
+  background-color: rgba(0, 0, 0, 0);
+  background-position: 4px 4px;
+  padding: 15px 30px;
+  margin-top: 30px;
+  border: 2px solid black;
+  border-radius: 30px;
+  font-weight: 600;
+}
+#jokeCard #btnBg {
+  content: "";
+  display: block;
+  width: 179.91px;
+  height: 49px;
+  background-color: rgb(234, 204, 4);
+  position: relative;
+  left: 4px;
+  top: -45px;
+  border-radius: 30px;
+  z-index: -1;
+}
+
+#footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: small;
+  color: silver;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  height: 100vh;
+}
+body header > div > p {
+  margin: 0;
+  padding: 10px;
 }/*# sourceMappingURL=style.css.map */

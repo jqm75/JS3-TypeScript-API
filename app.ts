@@ -105,7 +105,7 @@ async function callRandomJoke(): Promise<string> {
 
     const showRandomJoke = Math.round(Math.random());
 
-    console.log("🚀 ~ file: app.ts ~ line 102 ~ callRandomJoke ~ showRandomJoke", showRandomJoke)
+    console.log("🚀 ~ file: app.ts ~ line 108 ~ callRandomJoke ~ showRandomJoke", showRandomJoke)
 
     const className : string = `backImg blob${showRandomJoke}` // <- para cambiar el fondo
     
@@ -150,8 +150,8 @@ btnScore.forEach(button => {
         const data = button.getAttribute('data-score')
         
         reportJokes.push(new Joke(joke, Number(data)))
-        
-        console.log("🚀 ~ file: app.ts ~ line 139 ~ button.addEventListener ~ reportJokes", reportJokes)
+
+        console.log('🚀 ~ file: app.ts ~ line 154 ~ button.addEventListener ~ reportJokes', reportJokes)
         
     });
 });

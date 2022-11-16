@@ -72,7 +72,7 @@ function callRandomJoke() {
             }
         };
         const showRandomJoke = Math.round(Math.random());
-        console.log("🚀 ~ file: app.ts ~ line 102 ~ callRandomJoke ~ showRandomJoke", showRandomJoke);
+        console.log("🚀 ~ file: app.ts ~ line 108 ~ callRandomJoke ~ showRandomJoke", showRandomJoke);
         const className = `backImg blob${showRandomJoke}`; // <- para cambiar el fondo
         if (showRandomJoke === 1) {
             joke = (yield (yield fetch(ApiJoke1, optionsJoke1)).json()).joke;
@@ -97,7 +97,7 @@ btnScore.forEach(button => {
         btnScore.forEach(btn => btn.setAttribute('disabled', ''));
         const data = button.getAttribute('data-score');
         reportJokes.push(new Joke(joke, Number(data)));
-        console.log("🚀 ~ file: app.ts ~ line 139 ~ button.addEventListener ~ reportJokes", reportJokes);
+        console.log('🚀 ~ file: app.ts ~ line 154 ~ button.addEventListener ~ reportJokes', reportJokes);
     });
 });
 // ---------------------- CHANGE IMG BG ---------------------- 

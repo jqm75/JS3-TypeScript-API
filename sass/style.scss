@@ -1,106 +1,16 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
-
-#imgWeather {
-    width: 25%;
-}
-
-#txtWeather {
-    font-size: 24px
-}
+@import './bgImages';
+@import './config';
+@import './header';
+@import './jokes';
 
 body {
     font-family: "Open Sans", sans-serif;
     height: 100vh;
-}
 
-.backImg {
-    position: absolute;
-    z-index: -2;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: background-image 1s;
-}
-
-#backImg2 {
-    position: absolute;
-    z-index: -1;
-    top: 500px;
-    left: 40px;
-    width: 15%;
-    height: 15%;
-}
-
-#backImg3 {
-    position: absolute;
-    z-index: -1;
-    top: 120px;
-    right: 50px;
-    width: 15%;
-    height: 15%;
-}
-
-/* 
-li {
-    list-style: none!important;
-    width: 40px;
-    height: auto;
-    background-color: red;
-    margin: 5px;
-    a {
-        padding: 50%;
+    & header>div>p {
+        margin: 0;
+        padding: 10px;
     }
-} */
-
-/* #score1 {
-    background: url(../img/faces/face1.svg);
-
-} */
-
-.blob_00 {
-    background-image: url(../img/blobs/blob_00.svg);
-}
-
-.blob_01 {
-    background-image: url(../img/blobs/blob_01.svg);
-}
-
-.blob_02 {
-    background-image: url(../img/blobs/blob_02.svg);
-}
-
-.blob_03 {
-    background-image: url(../img/blobs/blob_03.svg);
-}
-
-.blob_04 {
-    background-image: url(../img/blobs/blob_04.svg);
-}
-
-.blo_05 {
-    background-image: url(../img/blobs/blob_05.svg);
-}
-
-.blob_06 {
-    background-image: url(../img/blobs/blob_06.svg);
-}
-
-.blob_07 {
-    background-image: url(../img/blobs/blob0_07.svg);
-}
-
-.blob_08 {
-    background-image: url(../img/blobs/blob_08.svg);
-}
-
-.blob_09 {
-    background-image: url(../img/blobs/blob_09.svg);
-}
-
-.blob_10 {
-    background-image: url(../img/blobs/blob_10.svg);
 }

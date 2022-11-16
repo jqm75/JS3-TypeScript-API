@@ -1,0 +1,73 @@
+.backImg {
+    position: absolute;
+    z-index: -2;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1s;
+}
+
+#backImg2 {
+    position: absolute;
+    z-index: -1;
+    top: 500px;
+    left: 40px;
+    width: 15%;
+    height: 15%;
+}
+
+#backImg3 {
+    position: absolute;
+    z-index: -1;
+    top: 120px;
+    right: 50px;
+    width: 15%;
+    height: 15%;
+}
+
+.blob_0 {
+    background-image: url(../img/blobs/blob_0.svg);
+}
+
+.blob_1 {
+    background-image: url(../img/blobs/blob_1.svg);
+}
+
+.blob_2 {
+    background-image: url(../img/blobs/blob_2.svg);
+}
+
+.blob_3 {
+    background-image: url(../img/blobs/blob_3.svg);
+}
+
+.blob_4 {
+    background-image: url(../img/blobs/blob_4.svg);
+}
+
+.blo_5 {
+    background-image: url(../img/blobs/blob_5.svg);
+}
+
+.blob_6 {
+    background-image: url(../img/blobs/blob_6.svg);
+}
+
+.blob_7 {
+    background-image: url(../img/blobs/blob0_7.svg);
+}
+
+.blob_8 {
+    background-image: url(../img/blobs/blob_8.svg);
+}
+
+.blob_9 {
+    background-image: url(../img/blobs/blob_9.svg);
+}
+
+.blob_10 {
+    background-image: url(../img/blobs/blob_10.svg);
+}

@@ -22,33 +22,45 @@
     </header>
         
     <div id="jokeCard">
-        <h1>Ready to laugh your ass off? </h1><br>
+        <h1>Ready to laugh your ass off?</h1><br>
         
         <p id="joke"></p>
 
-       <!--  <ul>
-            <li><a href="#" id="score1" class="btnScore" data-score="1" src="./img/blobs/blob_00.svg"></a> </li>
-            <li><a href="#2" id="score2" class="btnScore" data-score="2" src="./img/faces/face2.svg"></a></li>
-            <li><a href="#3" id="score3" class="btnScore" data-score="3" src="./img/faces/face3.svg"></a></li>
-        </ul> -->
+        <div id="rating">
+            
+            <div id="ratingBtns">
+                <button id="score1" data-score="1" ></button>
+                <button id="score2" data-score="2" ></button>
+                <button id="score3" data-score="3" ></button>
+            </div>
+        </div>
+        
+        <button id="jokeBtn" class="btn btn-danger" type="button" value="Show me a joke" onclick="callRandomJoke()">Show me a joke</button>
+        <div id="btnBg"></div>
 
 
-        <button class="btn btnScore btn-primary" data-score="1" id="score1">BAD</button>
+   <!--  <ul>
+        <li><a href="#" id="score1" class="btnScore" data-score="1" src="./img/blobs/blob_00.svg"></a> </li>
+        <li><a href="#2" id="score2" class="btnScore" data-score="2" src="./img/faces/face2.svg"></a></li>
+        <li><a href="#3" id="score3" class="btnScore" data-score="3" src="./img/faces/face3.svg"></a></li>
+    </ul> -->
+
+
+        <!-- <button class="btn btnScore btn-primary" data-score="1" id="score1">BAD</button>
         <button class="btn btnScore btn-primary" data-score="2" id="score2">SO, SO</button>
-        <button class="btn btnScore btn-primary" data-score="3" id="score3">EXCELLENT</button><br><br> 
+        <button class="btn btnScore btn-primary" data-score="3" id="score3">EXCELLENT</button><br><br>  -->
 
     </div>
     
-        <input class="btn btn-danger" type="button" value="Show me a joke" onclick="callRandomJoke()">
 
 
 
-    <div id="backImg1" class="backImg blob_01"></div>
-    <div id="backImg2" class="backImg blob_02"></div>
-    <div id="backImg3" class="backImg blob_03"></div>   
+    <div id="backImg1" class="backImg blob_1"></div>
+    <div id="backImg2" class="backImg blob_2"></div>
+    <div id="backImg3" class="backImg blob_3"></div>   
 
         
-    <footer id="footer" class=" container-fluid align- p-5">
+    <footer id="footer" class="">
         <p>©2022 Up to my eyeballs with work!</p>
     </footer>
 
