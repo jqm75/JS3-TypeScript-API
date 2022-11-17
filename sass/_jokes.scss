@@ -1,4 +1,4 @@
-#jokeCard {
+/* #jokeCard {
     margin: 0 auto;
     width: 40%;
     height: 95%;
@@ -7,11 +7,15 @@
     align-items: center;
     justify-content: center;
     color: white;
-    
+
+
     & h1 {
         font-size: medium;
         padding: 25px;
         font-weight: 600;
+        margin-top: 50px ;
+        text-align: center;
+
     }
     
     & #joke {
@@ -32,7 +36,7 @@
             width: 60%;
             display: flex;
             justify-content: space-evenly;
-            /* font-size: small; */
+            
 
             & button {
                 background-color: rgba(0, 0, 0, 0);
@@ -91,3 +95,4 @@
     font-size: small;
     color: silver;
 }
+ */

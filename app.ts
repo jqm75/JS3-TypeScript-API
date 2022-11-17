@@ -41,14 +41,14 @@ interface AWeather {
 
 // changeBackground();
 
-
-
 // ---------------------- WEATHER ---------------------- 
 
 const printWeather = ( { weather, main }: Weather ): void => {
-    let emojis = document.getElementById('ratingBtns');
+    
+    const emojis = document.getElementById('ratingBtns');
     if(emojis)
     emojis.style.display="none";
+
     const imgWeather = <HTMLImageElement>document.getElementById('imgWeather');
     const txtWeather = <HTMLElement>document.getElementById('txtWeather');
 
@@ -108,14 +108,14 @@ async function callRandomJoke(): Promise<string> {
         }
     };
 
-    const showRandomJoke = Math.round(Math.random());
+    const randomNumber = Math.round(Math.random());
 
-    console.log("🚀 ~ file: app.ts ~ line 108 ~ callRandomJoke ~ showRandomJoke", showRandomJoke)
+    console.log("🚀 ~ file: app.ts ~ line 108 ~ callRandomJoke ~ randomNumber", randomNumber)
 
-    const className : string = `bgImg blob${showRandomJoke}` // <- para cambiar el fondo
-    let emojis = document.getElementById('ratingBtns');
+    const emojis = document.getElementById('ratingBtns');
     
-    if (showRandomJoke === 1 && emojis) {
+    if (randomNumber === 1 && emojis) {
+        
         emojis.style.display = "inherit";
         joke = (await (await fetch(ApiJoke1, optionsJoke1)).json()).joke
         return HTMLResponse.innerHTML = joke
@@ -168,17 +168,15 @@ btnScore.forEach(button => {
 
 // ---------------------- CHANGE IMG BG ---------------------- 
 
-/* 
-function changeBackground(): void {
-    bgImg1.className = showRandomJoke();
-    bgImg2.className = showRandomJoke();
-    bgImg3.className = showRandomJoke();
-}; */
-
-const bgImg1 = <HTMLElement>document.getElementById('bgImg1')
+const bgImg: NodeListOf<HTMLOrSVGImageElement> = document.querySelectorAll('.bgImg')
 
 function changeBackground(): void {
-    const randomNumber = Math.round(Math.random() * 10)
-    const srcRoute = `../img/blobs/blob_${randomNumber}.svg`
-    bgImg1.style.backgroundImage = `url(${srcRoute})`
+    
+    bgImg.forEach((img: HTMLOrSVGImageElement) => {
+        
+        const randomNumber = Math.round(Math.random() * 10)
+        const srcRoute = `../img/blobs/blob_${randomNumber}.svg`
+        img.style.backgroundImage = `url(${srcRoute})`
+
+    });
 };

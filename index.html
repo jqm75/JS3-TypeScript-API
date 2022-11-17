@@ -22,28 +22,31 @@
         
     </header>
         
-    <div id="jokeCard">
-        <h1>Ready to laugh your ass off?</h1><br>
+    <article id="jokeParent">
+        <div id="jokeCard" card="card text-center w-75">
+            <div class="card-header"> Ready to laugh your ass off? </div>
+            <div id="jokeContent" class="card-body">
         
-        <p id="joke"></p>
-
-        <div id="rating">
-            
-            <div id="ratingBtns">
-                <button id="score1" data-score="1" ></button>
-                <button id="score2" data-score="2" ></button>
-                <button id="score3" data-score="3" ></button>
+                <p id="joke" class="card-text"></p>
+        
+                <div id="rating" class="card-text">
+                        <div id="ratingBtns" class="card">
+                        <button id="score1" class="btnScore" data-score="1" ></button>
+                        <button id="score2" class="btnScore" data-score="2" ></button>
+                        <button id="score3" class="btnScore" data-score="3" ></button>
+                    </div>
+                </div>
             </div>
-        </div>
         
-        <button id="jokeBtn" class="btn btn-danger" type="button" value="Show me a joke" onclick="callRandomJoke()">Show me a joke</button>
-        <div id="btnBg"></div>
-
-        <!-- <button class="btn btnScore btn-primary" data-score="1" id="score1">BAD</button>
-        <button class="btn btnScore btn-primary" data-score="2" id="score2">SO, SO</button>
-        <button class="btn btnScore btn-primary" data-score="3" id="score3">EXCELLENT</button><br><br>  -->
-
-    </div>
+            <div class="card-footer">
+                <button id="jokeBtn" class="btn btn-danger" type="button" value="Show me a joke" onclick="callRandomJoke()">Show me a joke</button>
+                <div id="btnBg"></div>
+            </div>
+            <!-- <button class="btn btnScore btn-primary" data-score="1" id="score1">BAD</button>
+            <button class="btn btnScore btn-primary" data-score="2" id="score2">SO, SO</button>
+            <button class="btn btnScore btn-primary" data-score="3" id="score3">EXCELLENT</button><br><br>  -->
+        </div>
+    </article>
 
     <div id="bgImg1" class="bgImg blob_1"></div>
     <div id="bgImg2" class="bgImg blob_2"></div>

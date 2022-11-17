@@ -1,0 +1,54 @@
+// `sm` applies to x-small devices (portrait phones, less than 576px)
+@media (min-width: 576px) {
+
+    #jokeCard {
+        margin: 22px auto;
+        width: 50%;
+        height: 100%;
+    }
+}
+
+// `md` applies to small devices (landscape phones, less than 768px)
+@media (min-width: 768px) {
+
+    #jokeCard {
+        margin: 0 auto;
+        width: 70%;
+        height: 95%;
+    }
+}
+
+// `lg` applies to medium devices (tablets, less than 992px)
+@media (min-width: 992px) {
+
+    #jokeCard {
+        margin: 0 auto;
+        width: 58%;
+        height: 95%;
+        
+    }
+}
+
+// `xl` applies to large devices (desktops, less than 1200px)
+@media (min-width: 1200px) {
+
+    #jokeCard {
+        margin: 0 auto;
+        width: 50%;
+        height: 96%;
+    
+    }
+
+}
+
+// `xxl` applies to x-large devices (large desktops, less than 1400px)
+@media (min-width: 1400px) { 
+
+    #jokeCard {
+        margin: 0 auto;
+        width: 35%;
+        height: 95%;
+        
+    }
+}
+
