@@ -4,10 +4,14 @@
 @import './config';
 @import './header';
 @import './jokes';
-@import './responsive';
+/* @import './responsive'; */
 
 body {
     font-family: "Open Sans", sans-serif;
+    display: grid;
+    grid-template-columns: repeat(1,auto 35% auto);
+    grid-template-rows: repeat(1, 35% 30% auto);
+    width: 100vw;
     height: 100vh;
 
     & header>div>p {

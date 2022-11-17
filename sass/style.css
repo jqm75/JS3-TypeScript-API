@@ -11009,12 +11009,11 @@ textarea.form-control-lg {
   background-image: url(../img/blobs/blob_10.svg);
 }
 
-* {
-  margin: 0;
-  box-sizing: border-box;
-  overflow-y: hidden;
-}
-
+/* * {
+    margin: 0;
+    box-sizing: border-box;
+    overflow-y: hidden;
+} */
 /* button:hover {
     cursor: pointer;
 } */
@@ -11035,141 +11034,143 @@ textarea.form-control-lg {
   border-left: 2px solid black;
 }
 
-/* #jokeCard {
-    margin: 0 auto;
-    width: 40%;
-    height: 95%;
+/* #jokeParent {
+
+    grid-column: 2;
+    grid-row: 2;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     color: white;
+} */
+/* 
+.jokeBtn {
+    background-color:rgba(0,0,0,0);
+    background-position: 4px 4px;
+    padding: 15px 30px;
+    margin-top: 30px;
+    border: 2px solid black;
+    border-radius: 30px;
+    font-weight: 600;
+}
 
-
-    & h1 {
-        font-size: medium;
-        padding: 25px;
-        font-weight: 600;
-        margin-top: 50px ;
-        text-align: center;
-
-    }
-
-    & #joke {
-        padding: 10px;
-        min-height: 50px;
-        font-size: small;
-        margin: 0px 80px 0 80px;
-    }
-
-    & #rating {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-
-        & #ratingBtns {
-            width: 60%;
-            display: flex;
-            justify-content: space-evenly;
-
-
-            & button {
-                background-color: rgba(0, 0, 0, 0);
-                margin-top: 30px;
-                border: 0;
-                font-size: 30px;
-                text-shadow: 2px 2px rgb(251, 203, 38);
-                background-size: contain;
-                background-repeat: no-repeat;
-                height: 50px;
-                width: 50px;
-            }
-
-            & #score1 {
-                background-image: url("../img/faces/face1.svg");
-            }
-
-            & #score2 {
-                background-image: url("../img/faces/face2.svg");
-            }
-
-            & #score3 {
-                background-image: url("../img/faces/face3.svg");
-            }
-        }
-    }
-
-    & #jokeBtn {
-        background-color:rgba(0,0,0,0);
-        background-position: 4px 4px;
-        padding: 15px 30px;
-        margin-top: 30px;
-        border: 2px solid black;
-        border-radius: 30px;
-        font-weight: 600;
-    }
-
-    & #btnBg {
-        content: "";
-        display: block;
-        width: 179.91px;
-        height: 49px;
-        background-color:rgb(234, 204, 4);
-        position: relative;
-        left: 4px;
-        top: -45px;
-        border-radius: 30px;
-        z-index: -1;
-    }
+.btnBg {
+    content: "";
+    display: block;
+    width: 179.91px;
+    height: 49px;
+    background-color:rgb(234, 204, 4);
+    position: relative;
+    left: 4px;
+    top: -45px;
+    border-radius: 30px;
+    z-index: -1;
+} */
+#jokeParent {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  min-width: 300px;
+  max-height: 160px;
+  /*  & #joke {
+      padding: 10px;
+      min-height: 50px;
+      font-size: small;
+      margin: 0px 80px 0 80px;
+  } */
+}
+#jokeParent .card {
+  max-width: 300px;
+}
+#jokeParent .rating {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+}
+#jokeParent .rating .ratingBtns {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+#jokeParent .rating .ratingBtns button {
+  background-color: rgba(0, 0, 0, 0);
+  margin-top: 30px;
+  border: 0;
+  font-size: 30px;
+  text-shadow: 2px 2px rgb(251, 203, 38);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 50px;
+  width: 50px;
+}
+#jokeParent .rating .ratingBtns .score1 {
+  background-image: url("../img/faces/face1.svg");
+}
+#jokeParent .rating .ratingBtns .score2 {
+  background-image: url("../img/faces/face2.svg");
+}
+#jokeParent .rating .ratingBtns .score3 {
+  background-image: url("../img/faces/face3.svg");
+}
+#jokeParent #footerCard {
+  width: 300px;
+  height: 160px;
+}
+#jokeParent .jokeBtn {
+  background-color: rgba(255, 255, 255, 0);
+  background-position: 4px 4px;
+  padding: 15px 30px;
+  margin-top: 30px;
+  border: 2px solid black;
+  border-radius: 30px;
+  font-weight: 600;
+  /* ::before {
+      background-color:rgba(255,255,255,0);
+      background-position: 4px 4px;
+      left: 40px;
+      top: 40px;
+      padding: 15px 30px;
+      margin-top: 30px;
+      border: 2px solid black;
+      border-radius: 30px;
+  } */
+}
+#jokeParent .btnBg {
+  content: "";
+  display: block;
+  width: 179.91px;
+  height: 58px;
+  background-color: rgb(234, 204, 4);
+  position: relative;
+  left: 50px;
+  top: -50px;
+  border-radius: 30px;
+  z-index: -1;
 }
 
 #footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: small;
-    color: silver;
+  display: flex;
+  grid-column: 2;
+  grid-row: 3;
+  justify-content: center;
+  align-items: flex-end;
+  color: silver;
+  font-size: small;
 }
- */
-@media (min-width: 576px) {
-  #jokeCard {
-    margin: 22px auto;
-    width: 50%;
-    height: 100%;
-  }
-}
-@media (min-width: 768px) {
-  #jokeCard {
-    margin: 0 auto;
-    width: 70%;
-    height: 95%;
-  }
-}
-@media (min-width: 992px) {
-  #jokeCard {
-    margin: 0 auto;
-    width: 58%;
-    height: 95%;
-  }
-}
-@media (min-width: 1200px) {
-  #jokeCard {
-    margin: 0 auto;
-    width: 50%;
-    height: 96%;
-  }
-}
-@media (min-width: 1400px) {
-  #jokeCard {
-    margin: 0 auto;
-    width: 35%;
-    height: 95%;
-  }
-}
+
+/* @import './responsive'; */
 body {
   font-family: "Open Sans", sans-serif;
+  display: grid;
+  grid-template-columns: repeat(1, auto 35% auto);
+  grid-template-rows: repeat(1, 35% 30% auto);
+  width: 100vw;
   height: 100vh;
 }
 body header > div > p {

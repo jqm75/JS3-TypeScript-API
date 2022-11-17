@@ -1,41 +1,72 @@
-/* #jokeCard {
-    margin: 0 auto;
-    width: 40%;
-    height: 95%;
+/* #jokeParent {
+
+    grid-column: 2;
+    grid-row: 2;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    color: white;
+} */
+
+
+/* 
+.jokeBtn {
+    background-color:rgba(0,0,0,0);
+    background-position: 4px 4px;
+    padding: 15px 30px;
+    margin-top: 30px;
+    border: 2px solid black;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+.btnBg {
+    content: "";
+    display: block;
+    width: 179.91px;
+    height: 49px;
+    background-color:rgb(234, 204, 4);
+    position: relative;
+    left: 4px;
+    top: -45px;
+    border-radius: 30px;
+    z-index: -1;
+} */
+
+#jokeParent {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: white;
 
-
-    & h1 {
-        font-size: medium;
-        padding: 25px;
-        font-weight: 600;
-        margin-top: 50px ;
-        text-align: center;
-
-    }
-    
-    & #joke {
+    min-width: 300px;
+    max-height: 160px;
+    /*  & #joke {
         padding: 10px;
         min-height: 50px;
         font-size: small;
         margin: 0px 80px 0 80px;
-    }
+    } */
+    .card {
+        max-width: 300px;
+        
 
-    & #rating {
+    }
+    & .rating {
         width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 0;
 
-        & #ratingBtns {
-            width: 60%;
+        & .ratingBtns {
+            width: 100%;
             display: flex;
-            justify-content: space-evenly;
+            justify-content: space-around;
+            flex-direction: row;
+
             
 
             & button {
@@ -50,49 +81,65 @@
                 width: 50px;
             }
 
-            & #score1 {
+            & .score1 {
                 background-image: url("../img/faces/face1.svg");
             }
 
-            & #score2 {
+            & .score2 {
                 background-image: url("../img/faces/face2.svg");
             }
 
-            & #score3 {
+            & .score3 {
                 background-image: url("../img/faces/face3.svg");
             }
         }
     }
-
-    & #jokeBtn {
-        background-color:rgba(0,0,0,0);
+#footerCard {
+    width: 300px;
+    height: 160px;
+}
+    & .jokeBtn {
+        background-color:rgba(255,255,255,0);
         background-position: 4px 4px;
         padding: 15px 30px;
         margin-top: 30px;
         border: 2px solid black;
         border-radius: 30px;
         font-weight: 600;
+        // box-shadow: rgb(234, 204, 4) 10px 10px;
+        /* ::before {
+            background-color:rgba(255,255,255,0);
+            background-position: 4px 4px;
+            left: 40px;
+            top: 40px;
+            padding: 15px 30px;
+            margin-top: 30px;
+            border: 2px solid black;
+            border-radius: 30px;
+        } */
     }
 
-    & #btnBg {
+    & .btnBg {
         content: "";
         display: block;
         width: 179.91px;
-        height: 49px;
+        height: 58px;
         background-color:rgb(234, 204, 4);
         position: relative;
-        left: 4px;
-        top: -45px;
+        left: 50px;
+        top: -50px;
         border-radius: 30px;
         z-index: -1;
     }
 }
 
 #footer {
+
     display: flex;
-    align-items: center;
+    grid-column: 2;
+    grid-row: 3;
     justify-content: center;
-    font-size: small;
+    align-items: flex-end;
     color: silver;
+    font-size: small;
 }
- */

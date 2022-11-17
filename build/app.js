@@ -34,10 +34,13 @@ const printWeather = ({ weather, main }) => {
         emojis.style.display = "none";
     const imgWeather = document.getElementById('imgWeather');
     const txtWeather = document.getElementById('txtWeather');
+    const txtDescription = document.getElementById('txtDescription');
     const icon = weather[0].icon;
+    const description = weather[0].description;
     const temp = parseInt(main.temp);
     imgWeather.src = "./img/" + icon + ".png";
     txtWeather.innerText = temp + ' ºC';
+    txtDescription.innerText = description;
 };
 window.onload = () => navigator.geolocation.getCurrentPosition(weatherUser);
 const weatherUser = (position) => __awaiter(void 0, void 0, void 0, function* () {

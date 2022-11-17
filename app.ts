@@ -32,7 +32,8 @@ interface IMain {
 }
 
 interface AWeather {
-    icon: string
+    icon: string,
+    description: string
 }
 
 // const backImg1: HTMLElement = document.querySelector("#backImg1")!;
@@ -51,12 +52,15 @@ const printWeather = ( { weather, main }: Weather ): void => {
 
     const imgWeather = <HTMLImageElement>document.getElementById('imgWeather');
     const txtWeather = <HTMLElement>document.getElementById('txtWeather');
+    const txtDescription = <HTMLElement>document.getElementById('txtDescription');
 
     const icon: string = weather[0].icon;
+    const description: string = weather[0].description;
     const temp: number = parseInt(main.temp);
 
     imgWeather.src = "./img/" + icon + ".png";
     txtWeather.innerText = temp + ' ºC';
+    txtDescription.innerText = description;
 }
 
 window.onload = () => navigator.geolocation.getCurrentPosition(weatherUser);
