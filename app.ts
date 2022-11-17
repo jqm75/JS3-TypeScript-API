@@ -41,9 +41,14 @@ interface AWeather {
 
 // changeBackground();
 
+
+
 // ---------------------- WEATHER ---------------------- 
 
 const printWeather = ( { weather, main }: Weather ): void => {
+    let emojis = document.getElementById('ratingBtns');
+    if(emojis)
+    emojis.style.display="none";
     const imgWeather = <HTMLImageElement>document.getElementById('imgWeather');
     const txtWeather = <HTMLElement>document.getElementById('txtWeather');
 
@@ -107,18 +112,23 @@ async function callRandomJoke(): Promise<string> {
 
     console.log("🚀 ~ file: app.ts ~ line 108 ~ callRandomJoke ~ showRandomJoke", showRandomJoke)
 
-    const className : string = `backImg blob${showRandomJoke}` // <- para cambiar el fondo
+    const className : string = `bgImg blob${showRandomJoke}` // <- para cambiar el fondo
+    let emojis = document.getElementById('ratingBtns');
     
-    if (showRandomJoke === 1) {
-        
+    if (showRandomJoke === 1 && emojis) {
+        emojis.style.display = "inherit";
         joke = (await (await fetch(ApiJoke1, optionsJoke1)).json()).joke
         return HTMLResponse.innerHTML = joke
+        
     }
 
     // Hacemos la petición/fetch a la API y lo convertimos a JSON.
-    
+    if (emojis){
+        emojis.style.display = "inherit";
+    }
     joke = (await (await fetch(ApiJoke2, optionsJoke2)).json()).value
     return HTMLResponse.innerHTML = joke
+    
 
 }
 
@@ -160,15 +170,15 @@ btnScore.forEach(button => {
 
 /* 
 function changeBackground(): void {
-    backImg1.className = showRandomJoke();
-    backImg2.className = showRandomJoke();
-    backImg3.className = showRandomJoke();
+    bgImg1.className = showRandomJoke();
+    bgImg2.className = showRandomJoke();
+    bgImg3.className = showRandomJoke();
 }; */
 
-const backImg1 = <HTMLElement>document.getElementById('backImg1')
+const bgImg1 = <HTMLElement>document.getElementById('bgImg1')
 
 function changeBackground(): void {
     const randomNumber = Math.round(Math.random() * 10)
     const srcRoute = `../img/blobs/blob_${randomNumber}.svg`
-    backImg1.style.backgroundImage = `url(${srcRoute})`
+    bgImg1.style.backgroundImage = `url(${srcRoute})`
 };

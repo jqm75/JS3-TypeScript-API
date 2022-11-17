@@ -29,6 +29,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 // changeBackground();
 // ---------------------- WEATHER ---------------------- 
 const printWeather = ({ weather, main }) => {
+    let emojis = document.getElementById('ratingBtns');
+    if (emojis)
+        emojis.style.display = "none";
     const imgWeather = document.getElementById('imgWeather');
     const txtWeather = document.getElementById('txtWeather');
     const icon = weather[0].icon;
@@ -73,12 +76,17 @@ function callRandomJoke() {
         };
         const showRandomJoke = Math.round(Math.random());
         console.log("🚀 ~ file: app.ts ~ line 108 ~ callRandomJoke ~ showRandomJoke", showRandomJoke);
-        const className = `backImg blob${showRandomJoke}`; // <- para cambiar el fondo
-        if (showRandomJoke === 1) {
+        const className = `bgImg blob${showRandomJoke}`; // <- para cambiar el fondo
+        let emojis = document.getElementById('ratingBtns');
+        if (showRandomJoke === 1 && emojis) {
+            emojis.style.display = "inherit";
             joke = (yield (yield fetch(ApiJoke1, optionsJoke1)).json()).joke;
             return HTMLResponse.innerHTML = joke;
         }
         // Hacemos la petición/fetch a la API y lo convertimos a JSON.
+        if (emojis) {
+            emojis.style.display = "inherit";
+        }
         joke = (yield (yield fetch(ApiJoke2, optionsJoke2)).json()).value;
         return HTMLResponse.innerHTML = joke;
     });
@@ -103,14 +111,14 @@ btnScore.forEach(button => {
 // ---------------------- CHANGE IMG BG ---------------------- 
 /*
 function changeBackground(): void {
-    backImg1.className = showRandomJoke();
-    backImg2.className = showRandomJoke();
-    backImg3.className = showRandomJoke();
+    bgImg1.className = showRandomJoke();
+    bgImg2.className = showRandomJoke();
+    bgImg3.className = showRandomJoke();
 }; */
-const backImg1 = document.getElementById('backImg1');
+const bgImg1 = document.getElementById('bgImg1');
 function changeBackground() {
     const randomNumber = Math.round(Math.random() * 10);
     const srcRoute = `../img/blobs/blob_${randomNumber}.svg`;
-    backImg1.style.backgroundImage = `url(${srcRoute})`;
+    bgImg1.style.backgroundImage = `url(${srcRoute})`;
 }
 ;

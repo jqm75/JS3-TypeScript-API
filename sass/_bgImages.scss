@@ -1,4 +1,4 @@
-.backImg {
+.bgImg {
     position: absolute;
     z-index: -2;
     top: 0px;
@@ -10,7 +10,7 @@
     transition: background-image 1s;
 }
 
-#backImg2 {
+#bgImg2 {
     position: absolute;
     z-index: -1;
     top: 500px;
@@ -19,7 +19,7 @@
     height: 15%;
 }
 
-#backImg3 {
+#bgImg3 {
     position: absolute;
     z-index: -1;
     top: 120px;

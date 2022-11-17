@@ -10935,7 +10935,7 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.backImg {
+.bgImg {
   position: absolute;
   z-index: -2;
   top: 0px;
@@ -10947,7 +10947,7 @@ textarea.form-control-lg {
   transition: background-image 1s;
 }
 
-#backImg2 {
+#bgImg2 {
   position: absolute;
   z-index: -1;
   top: 500px;
@@ -10956,7 +10956,7 @@ textarea.form-control-lg {
   height: 15%;
 }
 
-#backImg3 {
+#bgImg3 {
   position: absolute;
   z-index: -1;
   top: 120px;
@@ -11038,7 +11038,7 @@ button:hover {
 
 #jokeCard {
   margin: 0 auto;
-  width: 50%;
+  width: 40%;
   height: 95%;
   display: flex;
   flex-direction: column;
