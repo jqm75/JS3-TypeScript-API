@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="./sass/style.css">
+    
     <title>Jokes</title>
     <link rel="icon" type="image/x-icon" href="./img/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -24,8 +26,8 @@
         
     <article id="jokeParent">
 
-    <div class="card text-center bg-transparent border-0">
-        <div class="card-header bg-transparent border-0 fs-5 fw-semibold">
+    <div class="fullCard card text-center bg-transparent border-0">
+        <div class="card-header bg-transparent border-0 fw-semibold">
             Ready to laugh your ass off? 
         </div>
         <div class="card-body">
@@ -41,44 +43,20 @@
             </div>
         </div>
         <div class="card-footer bg-transparent border-0 w-100 d-flex justify-content-center">
-            <div id="footerCard">
+            <div id="card-footer">
                 <button id="jokeBtn" class="jokeBtn btn btn-danger" type="button" value="Show me a joke" onclick="callRandomJoke()">Show me a joke</button>
                 <div id="btnBg" class="btnBg"></div>
             </div>
         </div>
         </div>
 
-
-<!--         <div id="jokeCard" card="card text-center w-75">
-            <div class="card-header"> Ready to laugh your ass off? </div>
-            <div id="jokeContent" class="card-body">
-        
-                <p id="joke" class="card-text"></p>
-        
-                <div id="rating" class="card-text">
-                    <div id="ratingBtns" class="card">
-                        <button id="score1" class="btnScore" data-score="1" ></button>
-                        <button id="score2" class="btnScore" data-score="2" ></button>
-                        <button id="score3" class="btnScore" data-score="3" ></button>
-                    </div>
-                </div>
-            </div>
-        
-            <div class="card-footer">
-                <button id="jokeBtn" class="btn btn-danger" type="button" value="Show me a joke" onclick="callRandomJoke()">Show me a joke</button>
-                <div id="btnBg"></div>
-            </div>
-        </div> -->
-        <!-- <button class="btn btnScore btn-primary" data-score="1" id="score1">BAD</button>
-        <button class="btn btnScore btn-primary" data-score="2" id="score2">SO, SO</button>
-        <button class="btn btnScore btn-primary" data-score="3" id="score3">EXCELLENT</button><br><br>  -->
     </article>
 
     <div id="bgImg1" class="bgImg blob_1"></div>
     <div id="bgImg2" class="bgImg blob_2"></div>
     <div id="bgImg3" class="bgImg blob_3"></div>   
         
-    <footer id="footer" class="">
+    <footer id="footer" class="text-center">
         <p>©2022 Up to my eyeballs with work!</p>
     </footer>
 
